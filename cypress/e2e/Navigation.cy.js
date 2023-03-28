@@ -22,7 +22,6 @@ it("Verify if a user is able to click Available navbar", () => {
     cy.wait(1000);
 });
 it("Verify if a user is able to click Total Assets navbar", () => {
-    //cy.xpath("//div[normalize-space()='Total Assets']").click(); //Total Assets
     cy.visit("http://mm.thirdeye-ai.com/cmmsfrontend/");
 });
 });

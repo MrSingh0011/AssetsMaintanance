@@ -5,14 +5,19 @@ describe("QualityBlock", () => {
     cy.get("#outlined-basic").type("admin@jbmgroup.com");
     cy.get("#outlined-password-input").type("password123");
     cy.get("#LoginBtn").click();
-    //cy.xpath("//div[normalize-space()='Maintenance']").click();
-    ////div[normalize-space()='Quality Block']
   });
-  it("Verify if a user is able click on QualityBlock Navbar", () => {
+  it("Verify if a user is able to move Quality Block Die move to Maintenance Die", () => {
     cy.xpath("//div[normalize-space()='Quality Block']").click();
-    cy.get('#455').type(12);
-    cy.xpath("(//input[@id='455'])[2]").type(10);
+    cy.xpath("(//input[@name='goodPart'])[3]").type(0);
+    cy.xpath("(//input[@name='notGoodPart'])[3]").type(0);
     cy.xpath("(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv'])[5]").click();
     cy.get('#maintenanceBTN').click();
+  });
+  it("Verify if a user is able to move Quality Block Die move to Available Die", () => {
+    cy.xpath("//div[normalize-space()='Quality Block']").click();
+    cy.xpath("(//input[@name='goodPart'])[3]").type(0);
+    cy.xpath("(//input[@name='notGoodPart'])[3]").type(0);
+    cy.xpath("(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv'])[5]").click();
+    cy.get('#availableBTN').click();
   });
 });
