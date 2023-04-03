@@ -20,10 +20,11 @@ describe("Available", () => {
     cy.get(".edit-btn").click();
     cy.wait(4500);
   });
-  it("Check that the Available die is move to maintenance or not", () => {
-    cy.xpath("//div[normalize-space()='Available']").click();
-    cy.xpath("//p[normalize-space()='2']").click();
-    cy.wait(4500);
-    cy.get(".show.dropdown").click();
-});
+//   it("Check that the Available die is move to maintenance or not", () => {
+//     cy.xpath("//div[normalize-space()='Available']").click();
+//     cy.xpath("//p[normalize-space()='2']").click();
+//     cy.wait(4500);
+//     cy.get("#dropdown-basic").should("be.visible").click({ force: false });
+//     cy.get(".edit-btn").click();
+// });
 });

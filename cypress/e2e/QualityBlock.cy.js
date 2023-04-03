@@ -8,16 +8,16 @@ describe("QualityBlock", () => {
   });
   it("Verify if a user is able to move Quality Block Die move to Maintenance Die", () => {
     cy.xpath("//div[normalize-space()='Quality Block']").click();
-    cy.xpath("(//input[@name='goodPart'])[3]").type(0);
-    cy.xpath("(//input[@name='notGoodPart'])[3]").type(0);
-    cy.xpath("(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv'])[5]").click();
+    cy.xpath("(//input[@name='goodPart'])").eq(1).type('1');
+    cy.xpath("(//input[@name='notGoodPart'])").eq(1).type(1);
+    cy.xpath("//button[@id='dropdown-basic']//*[name()='svg']").eq(1).click();
     cy.get('#maintenanceBTN').click();
   });
   it("Verify if a user is able to move Quality Block Die move to Available Die", () => {
     cy.xpath("//div[normalize-space()='Quality Block']").click();
-    cy.xpath("(//input[@name='goodPart'])[3]").type(0);
-    cy.xpath("(//input[@name='notGoodPart'])[3]").type(0);
-    cy.xpath("(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv'])[5]").click();
+    cy.xpath("(//input[@name='goodPart'])").eq(0).type('0');
+    cy.xpath("(//input[@name='notGoodPart'])").eq(0).type(0);
+    cy.xpath("//button[@id='dropdown-basic']//*[name()='svg']").eq(0).click();
     cy.get('#availableBTN').click();
   });
 });

@@ -2,7 +2,7 @@
 describe("LoginPage", () => {
     beforeEach(() => {
       cy.visit("http://mm.thirdeye-ai.com/cmmsfrontend/login");
-      cy.wait(5000);
+      cy.wait(3000);
     });
   
     it("Verify if a user is able to login with valid email address and valid password.", () => {
@@ -31,6 +31,14 @@ describe("LoginPage", () => {
       cy.get("#outlined-password-input").type(" ");
       cy.get("#LoginBtn").click();
       cy.wait(3000);
+    });
+    it("Verify if a user is able to Click on the logout button", () => {
+      cy.get("#outlined-basic").type("admin@jbmgroup.com");
+      cy.get("#outlined-password-input").type("password123");
+      cy.get("#LoginBtn").click();
+      cy.wait(3000);
+      cy.get('.Navbar > .MuiButtonBase-root').click();
+      cy.wait(2000);
     });
   });
   
