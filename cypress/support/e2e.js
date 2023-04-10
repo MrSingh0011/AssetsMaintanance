@@ -20,3 +20,11 @@ import './commands'
 // require('./commands')
 require('cypress-xpath')
 import 'cypress-mochawesome-reporter/register';
+//import 'cypress-downloadfile/lib/downloadFileCommand';
+module.exports = (on) => {
+    on('task', {
+      'seedRisks' () {
+          console.log('sdjdsj'); //just a placeholder
+        }
+    })
+  }
